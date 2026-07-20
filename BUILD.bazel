@@ -3,18 +3,15 @@
 load("//vendor/amlogic/kernel:kernel_platform.bzl", "amlogic_kernel_platform")
 load("//vendor/amlogic/gpu-modules/bifrost:defs.bzl", "mali_bifrost_module")
 load("//vendor/amlogic/media-modules:defs.bzl", "media_modules_module")
-load("//vendor/amlogic/common_drivers:defs.bzl", "common_drivers_module")
 load(":modules.bzl", "COMMON_DRIVERS_MODULES", "OHM_MODULES")
 
 package(
     default_visibility = ["//visibility:public"],
 )
 
-mali_bifrost_module(name = "gpu_bifrost", kernel_build = ":ohm", deps = [":common_drivers"])
+mali_bifrost_module(name = "gpu_bifrost", kernel_build = ":ohm")
 
-media_modules_module(name = "media", kernel_build = ":ohm", deps = [":common_drivers"])
-
-common_drivers_module(name = "common_drivers", kernel_build = ":ohm", outs = COMMON_DRIVERS_MODULES)
+media_modules_module(name = "media", kernel_build = ":ohm")
 
 amlogic_kernel_platform(
     name = "ohm",
@@ -22,13 +19,12 @@ amlogic_kernel_platform(
         "sc2_s905x4_ah212_drm.dtb",
         "android_overlay_dt.dtbo",
     ],
-    module_outs = OHM_MODULES,
+    module_outs = OHM_MODULES + COMMON_DRIVERS_MODULES,
     build_config = "//vendor/amlogic/kernel:build.config.ohm.bazel",
     kmi_symbol_list = "//vendor/amlogic/kernel:android/abi_gki_aarch64_amlogic",
     kernel_modules = [
         ":wlan_ap6356",
         ":gpu_bifrost",
         ":media",
-        ":common_drivers",
     ],
 )
