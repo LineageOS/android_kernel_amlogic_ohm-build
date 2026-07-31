@@ -25,7 +25,7 @@ amlogic_kernel_platform(
     module_outs = [m for m in TARGET_MODULES + COMMON_DRIVERS_MODULES + SYSTEM_DLKM_MODULES if m not in MODULES_OUT_REMOVE],
     gki_modules_remove = GKI_MODULES_REMOVE + SYSTEM_DLKM_MODULES,
     system_dlkm_modules_load = ["kernel/" + m for m in SYSTEM_DLKM_MODULES] + [""],
-    build_config = "//vendor/amlogic/kernel:build.config.ohm.bazel",
+    build_config = "build.config.ohm",
     kmi_symbol_list = "//vendor/amlogic/kernel:android/abi_gki_aarch64_amlogic",
     kernel_modules = [
         ":gpu_bifrost",
