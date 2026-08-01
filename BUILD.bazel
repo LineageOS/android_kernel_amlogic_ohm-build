@@ -3,6 +3,7 @@
 load("//vendor/amlogic/kernel:kernel_platform.bzl", "amlogic_kernel_platform")
 load("//vendor/amlogic/gpu-modules/bifrost:defs.bzl", "mali_bifrost_module")
 load("//vendor/amlogic/media-modules:defs.bzl", "media_modules_module")
+load("//vendor/amlogic/qca6174-drivers:defs.bzl", "qca6174_sdio_module")
 load(":modules.bzl", "COMMON_DRIVERS_MODULES", "GKI_MODULES_REMOVE", "OHM_MODULES", "MODULES_OUT_REMOVE", "SYSTEM_DLKM_MODULES")
 
 package(
@@ -12,6 +13,8 @@ package(
 mali_bifrost_module(name = "gpu_bifrost", kernel_build = ":ohm")
 
 media_modules_module(name = "media", kernel_build = ":ohm")
+
+qca6174_sdio_module(name = "wlan_qca6174", kernel_build = ":ohm")
 
 amlogic_kernel_platform(
     name = "ohm",
@@ -27,5 +30,6 @@ amlogic_kernel_platform(
     kernel_modules = [
         ":gpu_bifrost",
         ":media",
+        ":wlan_qca6174",
     ],
 )
