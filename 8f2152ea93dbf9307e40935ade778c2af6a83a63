@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce717e2e_bcf89055",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-28T16:25:49Z",
+      "side": 1,
+      "message": "Did the same on deadpool and radxa0 and it builds fine.",
+      "revId": "8f2152ea93dbf9307e40935ade778c2af6a83a63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
