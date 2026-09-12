@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bb58b73_feab1d0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-09-12T15:20:27Z",
+      "side": 1,
+      "message": "Goes with: https://review.lineageos.org/c/LineageOS/android_kernel_amlogic_common_drivers/+/501846",
+      "revId": "41d95e59578fd94eb67601331dfdd7cf3aafacae",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
